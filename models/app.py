@@ -5,8 +5,9 @@ import pandas as pd
 st.set_page_config(page_title="Student Placement Prediction", page_icon="🎓")
 
 # load model
-model_clf = pickle.load(open("model_classification.pkl", "rb"))
-model_reg = pickle.load(open("model_regression.pkl", "rb"))
+base_path = os.path.dirname(__file__)
+model_clf = pickle.load(open(os.path.join(base_path, "model_classification.pkl"), "rb"))
+model_reg = pickle.load(open(os.path.join(base_path, "model_regression.pkl"), "rb"))
 
 st.title("🎓 Student Placement Prediction")
 st.write("Isi data mahasiswa lalu klik Prediksi")
