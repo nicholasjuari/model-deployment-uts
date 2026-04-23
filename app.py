@@ -1,12 +1,15 @@
+import pipeline
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 st.set_page_config(page_title="Student Placement Prediction", page_icon="🎓")
 
-# load model
-model_clf = pickle.load(open("model_classification.pkl", "rb"))
-model_reg = pickle.load(open("model_regression.pkl", "rb"))
+BASE_DIR = os.path.dirname(__file__)
+
+model_clf = pickle.load(open(os.path.join(BASE_DIR, "model_classification.pkl"), "rb"))
+model_reg = pickle.load(open(os.path.join(BASE_DIR, "model_regression.pkl"), "rb"))
 
 st.title("🎓 Student Placement Prediction")
 st.write("Isi data mahasiswa lalu klik Prediksi")
