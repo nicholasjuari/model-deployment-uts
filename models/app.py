@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 st.set_page_config(page_title="Student Placement Prediction", page_icon="🎓")
 
